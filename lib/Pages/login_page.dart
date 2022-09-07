@@ -1,23 +1,33 @@
+import 'package:basic_to_advance/Pages/home_page.dart';
+import 'package:basic_to_advance/utlis/routes.dart';
 import 'package:flutter/material.dart';
 
-class loginPage extends StatelessWidget {
-  // const loginPage({ Key? key }) : super(key: key);
+class loginPage extends StatefulWidget {
+  @override
+  State<loginPage> createState() => _loginPageState();
+}
 
+class _loginPageState extends State<loginPage> {
+  String name = "";
+  // const loginPage({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
-        child: Column(
+        child: SingleChildScrollView(
+            child: Column(
           children: [
             Image.asset(
               "assets/images/loginpage.png",
+
+              // height: 1200,R
               // alignment: AlignmentGeometry
             ),
             SizedBox(
               height: 50.0,
             ),
             Text(
-              "Welcome",
+              "Welcome $name",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -33,6 +43,13 @@ class loginPage extends StatelessWidget {
                   TextFormField(
                     decoration: InputDecoration(
                         hintText: "Enter username", labelText: "Username"),
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {});
+                    },
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   TextFormField(
                     obscureText: true,
@@ -40,19 +57,45 @@ class loginPage extends StatelessWidget {
                         hintText: "Enter password", labelText: "Password"),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 75,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      print("Login Done");
-                    },
-                    child: Text("Login"),
-                    style: TextButton.styleFrom(),
+                  InkWell(
+                    // hoverColor: Colors.red,
+                    // splashColor: Colors.red,
+                    onTap: (() {
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    }),
+                    child: Container(
+                      width: 110,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Login",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 10.0,
+                            ),
+                          ],
+                          color: Colors.deepPurple,
+                          borderRadius: BorderRadius.circular(15)),
+                    ),
                   )
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  //     Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  //   },
+                  //   child: Text("Login"),
+                  //   style: TextButton.styleFrom(minimumSize: Size(120, 50)),
+                  // )
                 ],
               ),
             )
           ],
-        ));
+        )));
   }
 }
