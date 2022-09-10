@@ -1,12 +1,17 @@
+// ignore: unused_import
 import 'package:basic_to_advance/Pages/home_page.dart';
 import 'package:basic_to_advance/utlis/routes.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class loginPage extends StatefulWidget {
+  const loginPage({Key? key}) : super(key: key);
+
   @override
   State<loginPage> createState() => _loginPageState();
 }
 
+// ignore: camel_case_types
 class _loginPageState extends State<loginPage> {
   final _forkey = GlobalKey<FormState>();
   moveTOHome(BuildContext context) {
@@ -28,17 +33,17 @@ class _loginPageState extends State<loginPage> {
               Image.asset(
                 "assets/images/loginpage.png",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50.0,
               ),
-              Text(
+              const Text(
                 "Welcome",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25.5,
               ),
               Padding(
@@ -47,7 +52,7 @@ class _loginPageState extends State<loginPage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "Enter username", labelText: "Username"),
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {
@@ -59,12 +64,12 @@ class _loginPageState extends State<loginPage> {
                         }
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     TextFormField(
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "Enter password", labelText: "Password"),
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {
@@ -76,7 +81,7 @@ class _loginPageState extends State<loginPage> {
                         }
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 75,
                     ),
                     InkWell(
@@ -85,12 +90,8 @@ class _loginPageState extends State<loginPage> {
                         width: 110,
                         height: 50,
                         alignment: Alignment.center,
-                        child: Text(
-                          "Login",
-                          style: TextStyle(color: Colors.white),
-                        ),
                         decoration: BoxDecoration(
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 color: Colors.black,
                                 blurRadius: 10.0,
@@ -98,6 +99,10 @@ class _loginPageState extends State<loginPage> {
                             ],
                             color: Colors.deepPurple,
                             borderRadius: BorderRadius.circular(15)),
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     )
                   ],

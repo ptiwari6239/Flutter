@@ -9,22 +9,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
         centerTitle: true,
-        title: Text(
-          "Catalog APP",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
+        title: const Text(
+          "Catalog App",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
         ),
       ),
-      body: Center(
-        child: Container(
-          child: Text(
-            "Welcome To My App",
-            style: TextStyle(color: Colors.red),
-          ),
+      body: const Center(
+        child: Text(
+          "Welcome To My App",
+          style: TextStyle(color: Colors.red),
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
