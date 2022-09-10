@@ -1,9 +1,11 @@
+// import 'package:basic_to_advance/Pages/home_page.dart';
 import 'package:basic_to_advance/Pages/home_page.dart';
 import 'package:basic_to_advance/Pages/login_page.dart';
+import 'package:basic_to_advance/utlis/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +19,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(brightness: Brightness.dark),
       routes: {
         "/": (context) => loginPage(),
-        "/login": (context) => loginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        // "/login": (context) => HomePage()
       },
     );
   }
