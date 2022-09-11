@@ -8,13 +8,15 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 0,
-      backgroundColor: Colors.deepPurple,
+      // ignore: use_full_hex_values_for_flutter_colors
+      backgroundColor: const Color(0xffb5d69be),
       child: ListView(
         children: const [
           DrawerHeader(
             padding: EdgeInsets.zero,
             child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.deepPurple),
+              // ignore: use_full_hex_values_for_flutter_colors
+              decoration: BoxDecoration(color: Color(0xffb5d69be)),
 
               margin: EdgeInsets.zero,
               accountName: Text("AnjaneyaTiwari"),

@@ -24,12 +24,16 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        // ignore: use_full_hex_values_for_flutter_colors
+        color: const Color(0xffb5d69be),
         child: SingleChildScrollView(
             child: Form(
           key: _forkey,
           child: Column(
             children: [
+              const SizedBox(
+                height: 80,
+              ),
               Image.asset(
                 "assets/images/loginpage.png",
               ),
@@ -52,12 +56,13 @@ class _loginPageState extends State<loginPage> {
                 child: Column(
                   children: [
                     TextFormField(
+                      // Username
                       decoration: const InputDecoration(
                           hintText: "Enter username", labelText: "Username"),
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {
                           return "Username can't be empty";
-                        } else if (value != null && value != "xyz@01") {
+                        } else if (value != null && value != "xyz") {
                           return "Wrong Username";
                         } else {
                           return null;
@@ -68,6 +73,7 @@ class _loginPageState extends State<loginPage> {
                       height: 30,
                     ),
                     TextFormField(
+                      // password
                       obscureText: true,
                       decoration: const InputDecoration(
                           hintText: "Enter password", labelText: "Password"),
@@ -93,8 +99,8 @@ class _loginPageState extends State<loginPage> {
                         decoration: BoxDecoration(
                             boxShadow: const [
                               BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 10.0,
+                                color: Colors.grey,
+                                blurRadius: 5.0,
                               ),
                             ],
                             color: Colors.deepPurple,
